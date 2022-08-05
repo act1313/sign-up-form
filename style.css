@@ -3,3 +3,50 @@ html, body {
     padding: 0;
 }
 
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.leftContainer {
+    background-image: url('/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 1 1 0%;
+}
+
+.leftContainer img {
+    width: 10vw;
+}
+
+.rightContainer {
+    flex: 2 1 0%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    gap: 8vw;
+    padding-right: 4vw;
+}
+
+label,input{
+    display:flex;
+    flex-direction:column;
+    font-size: large;
+}
+
+input {
+    border-radius: 5px;
+    border: none;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30vh;
+    background-color: rgba(27, 27, 27, 0.7);
+    margin-bottom: 70vh;
+}
