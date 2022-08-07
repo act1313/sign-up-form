@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 @font-face {
@@ -27,12 +28,19 @@ html, body {
 
 .rightContainer {
     flex: 2.75 1 0%;
+    padding: 12vh 0;
+    padding-left: 2.5vw;
+}
+
+.box {
+    inline-size: 50vw;
+    overflow-wrap: break-word;
 }
 
 .form-group {
     display: flex;
     flex-direction: row;
-    gap: 8vw;
+    gap: 4vw;
     padding-right: 4vw;
 }
 
@@ -42,9 +50,24 @@ label,input{
     font-size: large;
 }
 
+label {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: grey;
+    text-transform: uppercase;
+}
+
 input {
+    height: 3vh;
+    width: 15vw;
     border-radius: 5px;
-    border: none;
+    border: 1px lightgrey solid;
+    margin-bottom: 2vh;
+}
+
+input:focus {
+    outline: 1px rgb(40, 103, 124) solid;
+    box-shadow: 0 0 5px;
 }
 
 .banner {
@@ -62,4 +85,16 @@ input {
     font-family: NorseBold;
     color: #e5e7eb;
     margin: 0;
+}
+
+.button {
+    background-color: #596D48;
+    border: none;
+    height: 6vh;
+    width: 12vw;
+    color: #e5e7eb;   
+    font-size: 1.15rem;
+    font-weight: bold;
+    border-radius: 7.5px;
+    margin-top: 3vh;
 }
