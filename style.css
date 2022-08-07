@@ -70,6 +70,15 @@ input:focus {
     box-shadow: 0 0 5px;
 }
 
+a {
+    text-decoration: none;
+    color: #596D48;
+}
+
+.small {
+    padding-bottom: 4vh;
+}
+
 .banner {
     display: flex;
     justify-content: center;
@@ -97,4 +106,19 @@ input:focus {
     font-weight: bold;
     border-radius: 7.5px;
     margin-top: 3vh;
+}
+
+.error {
+    color: red;
+    font-size: 0.75rem;
+}
+
+.wrong {
+    outline: none !important;
+    border: 1px red solid !important;
+    box-shadow: 0 0 2.5px red;
+}
+
+.wrong:focus {
+    box-shadow: 0 0 4px red !important;
 }

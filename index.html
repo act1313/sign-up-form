@@ -19,7 +19,7 @@
             <div class="box">
                 <h2 class="topText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
             </div>
-            <h2 class="topText">Lorem ipsum</h2>
+            <h2 class="topText small">Lorem ipsum</h2>
             <h1 class="signUpText">Sign Up</h1>
             <form action="#" class="signUp">
                 <div class="form-group">
@@ -29,7 +29,8 @@
                         <label for="email">Email Address</label>
                         <input type="email" id="email" required>
                         <label for="password">Password</label>
-                        <input type="password" id="password" required>
+                        <input type="password" id="password" class='pass wrong' required>
+                        <p class="error">* Passwords do not match</p>
                     </div>
                     <div class="rightSignUp">
                         <label for="lastName">Last Name</label>
@@ -37,14 +38,30 @@
                         <label for="phone">Phone Number</label>
                         <input type="cell" id="phone" required>
                         <label for="confirm">Confirm Password</label>
-                        <input type="password" id="confirm" required>
+                        <input type="password" id="confirm" class="pass wrong" required>
                     </div>
                 </div>
             </form>
             <div class="createAccount">
                 <button class="button">Create Account</button>
             </div>
+            <div class="logIn">
+                <h4 class="logInText">Already have an account? <a href='#'>Log In</a></h2>
+            </div>
         </div>
     </div>
+
+    <script>
+        let password = document.getElementById("password");
+        let confirmPassword = document.getElementById("cofirm");
+
+        let passwordValue = password.value;
+        let confirmPasswordValue = confirmPassword.value;
+
+        if (passwrodValue === confirmPasswordValue && passwordValue != null) {
+            password.classList.remove('wrong');
+            confirmPassword.classList.remove('wrong');
+        }
+    </script>
 </body>
 </html>
