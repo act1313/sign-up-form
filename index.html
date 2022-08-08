@@ -29,8 +29,8 @@
                         <label for="email">Email Address</label>
                         <input type="email" id="email" required>
                         <label for="password">Password</label>
-                        <input type="password" id="password" class='pass wrong' required>
-                        <p class="error">* Passwords do not match</p>
+                        <input type="password" id="password" class='pass wrong' onKeyUp="checkPassword();" required>
+                        <p class="error" id="error">* Passwords do not match</p>
                     </div>
                     <div class="rightSignUp">
                         <label for="lastName">Last Name</label>
@@ -38,13 +38,13 @@
                         <label for="phone">Phone Number</label>
                         <input type="cell" id="phone" required>
                         <label for="confirm">Confirm Password</label>
-                        <input type="password" id="confirm" class="pass wrong" required>
+                        <input type="password" id="confirm" class="pass wrong" onKeyUp="checkPassword();" required>
                     </div>
                 </div>
+                <div class="createAccount">
+                    <button class="button">Create Account</button>
+                </div>
             </form>
-            <div class="createAccount">
-                <button class="button">Create Account</button>
-            </div>
             <div class="logIn">
                 <h4 class="logInText">Already have an account? <a href='#'>Log In</a></h2>
             </div>
@@ -52,15 +52,21 @@
     </div>
 
     <script>
-        let password = document.getElementById("password");
-        let confirmPassword = document.getElementById("cofirm");
+        function checkPassword() {
+            let password = document.getElementById("password");
+            let confirmPassword = document.getElementById("confirm");
 
-        let passwordValue = password.value;
-        let confirmPasswordValue = confirmPassword.value;
+            let errorThing = document.querySelector('#error');
 
-        if (passwrodValue === confirmPasswordValue && passwordValue != null) {
-            password.classList.remove('wrong');
-            confirmPassword.classList.remove('wrong');
+            if (document.getElementById("confirm").value != null && document.getElementById("password").value === document.getElementById("confirm").value) {
+                password.classList.remove('wrong');
+                confirmPassword.classList.remove('wrong');
+                errorThing.classList.add("good");
+            } else if (password.classList.contains('wrong') != true) {
+                password.classList.add('wrong');
+                confirmPassword.classList.add('wrong');
+                errorThing.classList.remove('good');
+            }
         }
     </script>
 </body>
